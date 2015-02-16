@@ -1,28 +1,53 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
+<div id="dan" class="container-fluid">
 
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
-  </div>
-</header>
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
-      </ul>
-    </div>
-  </div>
 </div>
+<div id="dan1" class="container-fluid"></div>
+<div class="container" style="padding-top: 20px; width: 1150px;">
+    <map zoom="11" center="[40.74, -74.18]" disable-default-u-i="true" disable-double-click-zoom="true" draggable="false" draggable-cursor="help" dragging-cursor="move" keyboard-shortcuts="false" max-zoom="12" min-zoom="8" tilt="45" map-type-id="TERRAIN">
+    </map>
+</div>
+<div id="dan2" class="container" style="height: 80px; width: 1125px; background-color: #ececec;"></div>
+
+<form ng-submit="submit(contactform)" name="contactform" method="post" class="form-horizontal" role="form">
+    <div class="form-group" ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">
+        <label for="inputName" class="col-lg-2 control-label">Name</label>
+        <div class="col-lg-10">
+            <input ng-model="formData.inputName" type="text" class="form-control" id="inputName" name="inputName" placeholder="Your Name" required>
+        </div>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error': contactform.inputEmail.$invalid && submitted }">
+        <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+        <div class="col-lg-10">
+            <input ng-model="formData.inputEmail" type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Your Email" required>
+        </div>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error': contactform.inputSubject.$invalid && submitted }">
+        <label for="inputSubject" class="col-lg-2 control-label">Subject</label>
+        <div class="col-lg-10">
+            <input ng-model="formData.inputSubject" type="text" class="form-control" id="inputSubject" name="inputSubject" placeholder="Subject Message" required>
+        </div>
+    </div>
+    <div class="form-group" ng-class="{ 'has-error': contactform.inputMessage.$invalid && submitted }">
+        <label for="inputMessage" class="col-lg-2 control-label">Message</label>
+        <div class="col-lg-10">
+            <textarea ng-model="formData.inputMessage" class="form-control" rows="4" id="inputMessage" name="inputMessage" placeholder="Your message..." required></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn btn-default" ng-disabled="submitButtonDisabled">
+                Send Message
+            </button>
+        </div>
+    </div>
+</form>
+<p ng-class="result" style="padding: 15px; margin: 0;">{{ resultMessage }}</p>
 
 <footer class="footer">
-  <div class="container">
-      <p>Angular Fullstack v2.0.13 |
-        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
-  </div>
+    <div class="container">
+        <p>Angular Fullstack v2.0.13 |
+            <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
+            <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a>
+        </p>
+    </div>
 </footer>
